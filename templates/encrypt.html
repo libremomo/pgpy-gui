@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Encrypt
+{% endblock %}
+
+{% block main %}
+<section class="container-fluid text-center">
+    <h2 style="padding: 15px;"><strong>Step 1:</strong> Enter email address or HKP fingerprint</h2>
+    <div style="padding-bottom: 30px;">
+        <div class="form-group mb-3">
+            <input required id="email-input" autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol"
+                    placeholder="Enter email or fingerprint..." type="text">
+        </div>
+
+    </div>
+
+    <h2 style="padding: 15px;"><strong>Step 2:</strong> Type your message</h2>
+    <div style="padding-bottom: 30px;">
+        <div class="form-group mb-3" style="width:65%; margin:auto;">
+            <textarea required class="form-control" id="source-text-input" rows="3" placeholder="Type your message here..."></textarea>
+        </div>
+        <button class="btn btn-lg btn-warning" onClick="sendForEncryption()">Encrypt <i class="bi bi-arrow-down"></i></button>
+    </div>
+</section>
+
+<section class="container-fluid text-center">
+    <h2 style="padding: 15px;"><strong>Step 3:</strong> Here you go!</h2>
+    <div style="padding-bottom: 30px;">
+        <div>
+            <p id="encrypted-output" style="padding: 45px; width:65%; border-style: dotted; margin: auto;"></p>
+        </div>
+    </div>
+    <a href="/encrypt" class="btn btn-outline-dark" role="button" aria-pressed="true">Start Over <i class="bi bi-arrow-clockwise"></i></a>
+</section>
+{% endblock %}
+
+
+

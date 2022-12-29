@@ -1,0 +1,49 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .black
+{
+    color: black;
+}
+nav .navbar-brand .gray
+{
+    color: gray;
+}
+
+
+.mybox {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#main {
+    float: left;
+    width: 70%;
+    padding: 0 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+#side {
+    float: right;
+    width: 30%;
+    background: #212529;
+    color: #fff;
+    margin-top: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+#main-footer {
+    background: #333;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}

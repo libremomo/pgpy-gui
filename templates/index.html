@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Intro
+{% endblock %}
+
+{% block main %}
+<div class="mybox">
+    <section id="main">
+        <p>This service is a graphic user interface for working with PGPy Python library.</p>
+        <h4>Use Case</h4>
+        <p>Suppose that you want to send a PGP encrypted
+            message to a friend. We usually leave the task of working with keys and encrypt/decrypt operations to our email
+            clients such as Mozilla Thunderbird. But what if you don't have access to your email client and all of the keys that
+            you have previously imported?</p>
+        <p>Here comes the power of our tool. If your recipient has already published his/her public key on the <a href="https://keys.openpgp.org/">OpenPGP key
+        server</a>, you can just sit back and ask the key server to provide it for you. The rest is quite simple. We handle both of the
+            recipient's key and your message to our tiny app and here is your encrypted message! The one that can only be decrypted via the
+            reciipient's private key.</p>
+        <p>Now you can easily send the encrypted message via your desired platform. </p>
+        <a href="/encrypt" class="btn btn-warning" role="button" aria-pressed="true">Start Encryption <i class="bi bi-arrow-right"></i></a>
+    </section>
+
+    <section id="side">
+        <h1>Encrypt</h1>
+        <h1>Your Messages</h1>
+        <h1>On The Go!</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+</div>
+{% endblock %}
