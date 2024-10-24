@@ -1,66 +1,88 @@
 # PGPy GUI
-#### Video Demo: <https://odysee.com/@libremomo:7/PGPy-GUI:0>
 
-A graphic user interface for message encryption with PGPy Python library, written in Flask.
+<div align=center>
+<img width=90% alt="PGPy GUI" src="https://github.com/libremomo/pgpy-gui/blob/cs50/problems/2022/x/project/docs/images/frontend.png">
+</div>
 
-## What is PGPy
-PGPy is a Python implementation of the OpenPGP specification, as described in RFC 4880.
+A graphical user interface for PGP message encryption built with Flask and the PGPy library.
 
-It aims to be easy to use above all else, but also to eventually embody a complete, compliant implementation of the specification.
+[![Video Demo](https://img.shields.io/badge/Video-Demo-blue)](https://odysee.com/@libremomo:7/PGPy-GUI:0)
 
-## Description
-Suppose that you want to send a PGP encrypted message to a friend. We usually leave the task of working with keys and encrypt/decrypt operations to our email clients such as Mozilla Thunderbird. But what if you don't have access to your email client and all of the keys that you have previously imported?
+## Overview
 
-Here comes the power of our tool. If your recipient has already published his/her public key on the [OpenPGP key server](https://keys.openpgp.org/), you can just sit back and ask the key server to provide it for you. The rest is quite simple. We handle both of the recipient's key and your message to our tiny app and here is your encrypted message! The one that can only be decrypted via the recipient's private key.
-## How to Run
+PGPy GUI simplifies the process of encrypting messages using PGP (Pretty Good Privacy) encryption without requiring an email client. It leverages the PGPy library, which is a Python implementation of the OpenPGP specification (RFC 4880).
 
-The app depends on PGPy package to work. You can install it from pip. Notice that PGPy requires Python >= 3.6.
+## Features
+
+- Fetch public keys from the OpenPGP key server
+- Encrypt messages using recipient's public key
+- Simple web-based interface
+- No email client required
+
+## Installation
+
+PGPy GUI requires Python 3.6 or higher. Install the required dependency using pip:
 
 ```bash
 pip install PGPy
 ```
-You can run the web app simply by entering the following command:
+
+## Running the Application
+
+Start the web application using Flask:
+
 ```bash
 flask run
 ```
 
-## Usage
-1. Enter recipient's email address or HKP fingerprint
-2. Enter your message and press "Encrypt"
-3. Receive your encrypted message. If the mentioned email or fingerprint is not associated with any public key on the server, an Error will be thrown.
+## How to Use
 
-## What's inside
-#### app.py
-Contains the routes of the web application and handles the GET and POST requests coming from client side.
-#### helpers.py
-Contains the definition of the functions. One for calling the OpenPGP server API and two other for loading key and encryption.
-#### layout.html
-Base template for other pages, extended by jinja placeholders.
+1. Enter the recipient's email address or HKP fingerprint
+2. Type your message in the text area
+3. Click "Encrypt"
+4. Copy your encrypted message
 
-## Challenges
-Using request.get.form with POST method to obtain the user input caused the entire page to reload. I had to use either AJAX or pure JS fetch() method to prevent that. I chose the second way.
+The application will automatically fetch the recipient's public key from the OpenPGP key server. If no public key is found for the provided email or fingerprint, an error message will be displayed.
 
-## Documentation
-- [OpenPGP API docs](https://keys.openpgp.org/about/api)
-- [PGPy docs](https://pgpy.readthedocs.io/en/latest/index.html)
+## Project Structure
 
-## Roadmap
-- [ ] file encryption/decryption
-- [ ] adding the ability to load PGP manually
-- [ ] better exception handling
-- [ ] add the ability to call other key servers
-- [ ] adding alerts and validations
-- [ ] responsive design
+- `app.py` - Flask routes and request handling
+- `helpers.py` - Core functionality including API calls and encryption
+- `layout.html` - Base template for the web interface
 
-## Acknowledgements
-Many thanks to my friend Alireza Shajari who helped me fix the page reloading issue.
-Special thanks to Aleksa Zatezalo for his informative article "[Creating a PGP Encryption Tool With Python](https://betterprogramming.pub/creating-a-pgp-encryption-tool-with-python-19bae51b7fd)".
-Last but not least [keyoxide](https://keyoxide.org/) was a true inspiration. I thank Yarmo Mackenbach for that.
+## Technical Details
 
+### PGPy Library
+PGPy is a Python implementation of the OpenPGP specification that prioritizes ease of use while maintaining full compliance with the standard. This project uses PGPy for all cryptographic operations.
 
-## Disclaimer
-This is an experimental software. Use at your own risk.
+### Implementation Notes
+The application uses JavaScript's `fetch()` API for handling form submissions asynchronously, preventing page reloads during encryption operations.
+
+## Future Enhancements
+
+- [ ] File encryption/decryption support
+- [ ] Manual PGP key import functionality
+- [ ] Enhanced exception handling
+- [ ] Support for multiple key servers
+- [ ] Input validation and user alerts
+- [ ] Responsive design implementation
+
+## API Documentation
+
+- [OpenPGP Key Server API](https://keys.openpgp.org/about/api)
+- [PGPy Documentation](https://pgpy.readthedocs.io/en/latest/index.html)
+
+## Acknowledgments
+
+- [Alireza Shajari](https://github.com/mahooresorkh) - Assistance with AJAX implementation
+- Aleksa Zatezalo - Article: ["Creating a PGP Encryption Tool With Python"](https://betterprogramming.pub/creating-a-pgp-encryption-tool-with-python-19bae51b7fd)
+- [Keyoxide](https://keyoxide.org/) by Yarmo Mackenbach - Project inspiration
+
+## Security Notice
+
+This is experimental software intended for educational purposes. Use in production environments is not recommended.
 
 ## License
-PGPy is distributed under a BSD 3-Clause licensed.
-The web app and its contents are licensed under CC BY-SA 4.0.
+
+- PGPy is licensed under the BSD 3-Clause License
+- This web application and its contents are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
