@@ -1,10 +1,10 @@
 # PGPy GUI
 
 <div align=center>
-<img width=90% alt="PGPy GUI" src="https://github.com/libremomo/pgpy-gui/blob/cs50/problems/2022/x/project/docs/images/frontend.png">
+<img width=90% alt="PGPy GUI" src="https://github.com/libremomo/pgpy-gui/blob/master/docs/images/frontend.png">
 </div>
 
-A graphical user interface for PGP message encryption built with Flask and the PGPy library.
+A graphical user interface for PGP message encryption built with Flask and the PGPy library. I submitted this as the final project in my [Harvard CS50x (2022) course](https://certificates.cs50.io/2f767ba2-8d03-4a9c-be59-295309af62a3.pdf?size=letter).
 
 [![Video Demo](https://img.shields.io/badge/Video-Demo-blue)](https://odysee.com/@libremomo:7/PGPy-GUI:0)
 
